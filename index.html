@@ -18,6 +18,10 @@
                 <li>Use a 'get' request on the express app.</li>
                 <li>variable.get(url, (req,res)=>{
                         res.send(content)
+                        // or
+                        res.sendFile(absolute file path)
+                        //or
+                        res.sendFile(relative file path, {root:__dirname};)
                     })
                 </li>
             </ol>
