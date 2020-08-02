@@ -21,13 +21,25 @@
                         // or
                         res.sendFile(absolute file path)
                         //or
-                        res.sendFile(relative file path, {root:__dirname};)
+                        res.sendFile(relative file path, {root:__dirname})
                     })
                 </li>
                 <li>Create multiple pages, add a navbar and add links.</li>
-                <li>use 'get' function on each URL.</li>
-                <li>pass a middleware through the 'use' function on the app. 'const_name.use(()=>{
-                    response.sendFile(path, {root:__dirname})})'
+                <li>Use 'get' function on each URL.</li>
+                <li>Pass a middleware through the 'use' function on the app. 'const_name.use((req,res)=>{
+                    res.sendFile(path, {root:__dirname})})'
+                </li>
+                <li>Install EJS: 'npm install ejs', then set it to the app: 'const_name.set('view engine', 'ejs');</li>
+                <li>const_name.set('views', 'folder name')</li>
+                <li>Create 'blogs - about - New Blog' ejs files instead of html files: 'index.ejs'</li>
+                <li>Render 'the view' within the 'get' function: res.render(name of file)</li>
+                <li>Pass title to the pages: const_name.get(url,(req, res)=>{res.render(filename, {title: name})})</li>
+                <li>Use title: <%= title %></li>
+                <li>Add blogs to the 'home page': const blogs =[{title:...,snippet:...},{''},{''}]</li>
+                <li>Render it: res.render(page, {title:name, blogs:blogs})</li>
+                <li>Inside 'home page', check to see if there are blogs before rendering them: <% if(blogs.length>0){%>
+                    
+                <%}%> 
                 </li>
             </ol>
         </div>
