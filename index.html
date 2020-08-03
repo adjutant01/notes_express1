@@ -11,36 +11,38 @@
             <h2>Net Ninja Express Basic</h2>
             <a href='https://nidvar.github.io/notes_home'>Home</a>
             <ol>
-                <li>Install express: 'npm install express'</li>
-                <li>Require 'express' using require('express'). Store in a 'const'</li>
-                <li>Create express app using 'express()'. Store in a 'const'.</li>
-                <li>Listen for requests using: 'const_name.listen(port number)'</li>
-                <li>Use a 'get' request on the express app. 'const_name.get()'</li>
-                <li>const_name.get(url, (req,res)=>{
-                        res.send(content)
-                        // or
-                        res.sendFile(absolute file path)
-                        //or
-                        res.sendFile(relative file path, {root:__dirname})
+                <li>Check express version then install ---> npm express -v / npm install express</li>
+                <li>Require 'express' ---> require('express'). Store in a 'const'</li>
+                <li>Create express app ---> 'express()'. Store in a 'const'.</li>
+                <li>Listen for requests ---> 'const_name.listen(port number)'</li>
+                <li>Use a 'get' request on the express app --->'const_name.get()'</li>
+                <li>const_name.get(url, (req,res)=>{<br /><br />
+                        res.send(content)<br />
+                        // or<br />
+                        res.sendFile(absolute file path)<br />
+                        //or<br />
+                        res.sendFile(relative file path, {root:__dirname})<br />
                     })
                 </li>
-                <li>Create multiple pages, add a navbar and add links.</li>
-                <li>Use 'get' function on each URL.</li>
-                <li>Pass a middleware through the 'use' function on the app. 'const_name.use((req,res)=>{
+                <li>Repeat above process for each page.</li>
+                <li>Pass a middleware through the 'use' function on the app ---> 'const_name.use((req,res)=>{
                     res.sendFile(path, {root:__dirname})})'
                 </li>
-                <li>Install EJS: 'npm install ejs', then set it to the app: 'const_name.set('view engine', 'ejs');</li>
-                <li>const_name.set('views', 'folder name')</li>
-                <li>Create 'blogs - about - New Blog' ejs files instead of html files: 'index.ejs'</li>
-                <li>Render 'the view' within the 'get' function: res.render(name of file)</li>
-                <li>Pass title to the pages: const_name.get(url,(req, res)=>{res.render(filename, {title: name})})</li>
+                <li>Install EJS --->  'npm install ejs',</li> 
+                <li>Set it to the app ---> 'const_name.set('view engine', 'ejs')</li>
+                <li>Set up folder if default isn't 'views' folder ---> const_name.set('views', 'folder name')</li>
+                <li>Replace '.html' extension with 'ejs' ---> index.ejs</li>
+                <li>Replace 'sendFile' with 'render' within the 'get' function ---> res.render(name of file)</li>
+                <li>Pass title to the pages ---> const_name.get(url,(req, res)=>{res.render(filename, {title: name})})</li>
                 <li>Use title: <%= title %></li>
-                <li>Add blogs to the 'home page': const blogs =[{title:...,snippet:...},{''},{''}]</li>
-                <li>Render it: res.render(page, {title:name, blogs:blogs})</li>
-                <li>Inside 'home page', check to see if there are blogs before rendering them: <% if(blogs.length>0){%>
+                <li>Add blogs to the 'home page' ---> const blogs =[{title:...,snippet:...},{''},{''}]</li>
+                <li>Render it ---> res.render(page, {title:name, blogs:blogs})</li>
+                <li>Inside 'home page', check to see if there are blogs before rendering them ---> <% if(blogs.length>0){%>
                     
                 <%}%> 
                 </li>
+                <li>Create 'partials' folder. Create partials file with 'ejs' extention</li>
+                <li>Place in desired location ---> <%- include(relative path) %></li>
                 <li></li>
             </ol>
         </div>
