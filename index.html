@@ -44,7 +44,28 @@
                 <li>Create 'partials' folder. Create partials file with 'ejs' extention</li>
                 <li>Place in desired location ---> <%- include(relative path) %></li>
                 <li>Server static 'style.css' file ---> const_name.use(express.static(foldername))</li>
+                <li>Grab link from MongoDB</li>
                 <li>Install Mongoose ---> npm install mongoose</li>
+                <li>Require it then put it in a const ---> require('moongoose')</li>
+                <li>Connect to the database using the 'connect' method. ---> const_name.connect('the big link from MongoDB', {useNewUrlParser: true, useUnifiedTopology: true}).then(a=>{console.log('connected')}).catch(a=>{console.log(a)})</li>
+                <li>Insert 'const_name.listen' into the mongoose connect function, to avoid loading page before data has been supplied.</li>
+                <li>Create schema and model for data, put it inside a folder 'models'</li>
+                <li>Inside folder, create 'blog.js', then require Mongoose inside file ---> require('mongoose')</li>
+                <li>Grab 'Schema' from mongoose object and put it in a variable. ---> const_name = mongoose.Schema; (constructor function)</li>
+                <li>Create a new schema, put it in constant. ---> <br />
+                    const_name = new Schema({<br />
+                        title: {<br />
+                            type:String, required: true<br />
+                        },<br />
+                        snippet:{<br />
+                            type: String,<br />
+                            required: true
+                        },
+                        body:{
+                            type:String,<br />
+                            required:true<br />
+                        }
+                    }, {timestamps: true})</li>
             </ol>
         </div>
     </body>
